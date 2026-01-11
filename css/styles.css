@@ -67,20 +67,19 @@ a:hover {
     border-bottom: 1px solid #0066cc;
 }
 
-.book-list {
-    list-style: none;
-    margin-bottom: 2rem;
-}
-
-.book-list li {
+.author-group {
     margin-bottom: 1rem;
-    padding-left: 0;
     font-size: 1.05rem;
     color: #4a4a4a;
 }
 
-.book-list li strong {
-    color: #1a1a1a;
+.book-box {
+    background-color: #f5f5e6;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    border-radius: 3px;
+    display: inline;
 }
 
 .section {
