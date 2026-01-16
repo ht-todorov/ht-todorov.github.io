@@ -82,6 +82,16 @@ a:hover {
     display: inline;
 }
 
+a.book-box {
+    color: #4a4a4a;
+    border-bottom: none;
+}
+
+a.book-box:hover {
+    border-bottom: none;
+    background-color: #e8e8d6;
+}
+
 .section {
     margin-bottom: 2rem;
 }
