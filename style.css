@@ -1,0 +1,256 @@
+:root {
+  --text: #21201d;
+  --muted: #75716a;
+  --accent: #a4243b;   /* cherry — Kyustendil */
+  --rule: #e6e2da;
+  --bg: #fdfbf7;
+}
+
+:root.dark {
+  --text: #d9d5cd;
+  --muted: #8f8a81;
+  --accent: #e0596f;
+  --rule: #33302b;
+  --bg: #1a1817;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+html {
+  border-top: 3px solid var(--accent);
+  background: var(--bg);
+}
+
+body {
+  font-family: Charter, Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+}
+
+nav.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3.5rem;
+}
+
+nav.top a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav.top a:hover {
+  color: var(--accent);
+}
+
+nav.top span,
+nav.top a.here {
+  color: var(--text);
+}
+
+button.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+button.theme-toggle:hover {
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 2rem;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  border-top: 2px solid var(--accent);
+  margin-top: 0.9rem;
+}
+
+h2 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  margin: 2.75rem 0 0.75rem;
+}
+
+p, li {
+  margin: 0.75rem 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li::marker {
+  color: var(--muted);
+}
+
+hr {
+  border: none;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+hr::after {
+  content: "\2042";  /* asterism ⁂ */
+  color: var(--muted);
+  letter-spacing: 0.2em;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.byline {
+  color: var(--muted);
+  font-style: italic;
+  margin-top: -1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+p.dropcap::first-letter {
+  float: left;
+  font-size: 3.3em;
+  line-height: 0.85;
+  padding: 0.04em 0.12em 0 0;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Bookshelf: author column on the left, titles as chips on the right.
+   Writing index reuses the grid with a date column instead. */
+dl.shelf, dl.dated {
+  display: grid;
+  grid-template-columns: 11.5rem 1fr;
+  column-gap: 1.25rem;
+  row-gap: 0.65rem;
+  margin: 1rem 0 0;
+}
+
+dl.dated {
+  grid-template-columns: 7.5rem 1fr;
+}
+
+dl.shelf dt, dl.dated dt {
+  color: var(--muted);
+  padding-top: 0.15rem;
+}
+
+dl.dated dt {
+  font-size: 0.95rem;
+}
+
+dl.shelf dd, dl.dated dd {
+  margin: 0;
+}
+
+dl.shelf dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: baseline;
+}
+
+.title {
+  font-style: italic;
+  font-size: 0.95rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.1rem 0.6rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 40em) {
+  dl.shelf, dl.dated {
+    grid-template-columns: 1fr;
+    row-gap: 0.3rem;
+  }
+  dl.shelf dt, dl.dated dt {
+    margin-top: 0.6rem;
+  }
+  .title {
+    white-space: normal;
+  }
+}
+
+sup a {
+  text-decoration: none;
+}
+
+ol.footnotes {
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding-left: 1.25rem;
+}
+
+footer {
+  margin-top: 4.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+footer .social {
+  display: flex;
+  gap: 1.35rem;
+  margin-top: 1.2rem;
+}
+
+footer .social a {
+  color: var(--muted);
+  line-height: 0;
+}
+
+footer .social a:hover {
+  color: var(--accent);
+}
+
+footer .social svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: currentColor;
+}
